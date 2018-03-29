@@ -18,6 +18,7 @@ public class MainApp {
         System.out.println("Constant 'c': " + Info.c);
 		System.out.println("Epsilon (c * Rmax): " + Info.epsilon);
 		System.out.println("k = " + Info.k);
+		System.out.println("Gamma = "+ Info.gammma);
 
 		System.out.println("1: Value Iteration\n2: Policy Iteration");
         Scanner sc = new Scanner(System.in);

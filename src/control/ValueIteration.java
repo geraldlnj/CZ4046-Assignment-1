@@ -19,29 +19,27 @@ public class ValueIteration {
 
     //this method modifies the Grid object passed in from MainApp
     private void utilityUpdater(){
-        boolean pass = false;
         double tempUtility;
         double delta;
         double oriUtility;
         //State tempState;
 
-        while (!pass) { //while pass condition has not been met
-            delta = 0; //reset delta (change in state utility
+        do { //while pass condition has not been met
+            delta = 0; //reset delta (change in state utility)
             for (int row = 0; row < Info.numRows; row++) {
                 for (int col = 0; col < Info.numCols; col++) {
-
-                    oriUtility = gridWorldContainer.getState(col, row).getReward();
-                    tempUtility = newUtilityCalculator(col, row); //update utility from adjacent utilities
-
-                    //to find max delta of this sweep
-                    if (abs(oriUtility-tempUtility) > delta)delta = abs(oriUtility-tempUtility);
-                    if (!(gridWorldContainer.getState(col, row).isWall()))
+                    if(!(gridWorldContainer.getState(col, row).getType()==0)) { //if not wall
+                        oriUtility = gridWorldContainer.getState(col, row).getReward();
+                        tempUtility = oriUtility+ Info.discount*newUtilityCalculator(col, row); //update utility from adjacent utilities
+                        //to find max delta of this sweep
+                        if (abs(oriUtility - tempUtility) > delta) delta = abs(oriUtility - tempUtility);
+                        System.out.printf("(%d, %d): \ntype: %d\nchange: %f\n", col, row, gridWorldContainer.getState(col, row).getType(), abs(oriUtility - tempUtility));
+                        System.out.printf("utility: %f\n\n", tempUtility);
                         gridWorldContainer.getState(col, row).setReward(tempUtility); //apply new utility to state
+                    }
                 }
             }
-            if (delta < Info.gammma) pass = true; //if pass condition met, set to true
-            System.out.println(delta);
-        }
+        } while (delta>Info.gammma);
     }
 
     //helper method for utilityUpdater for updating each state's utility
@@ -50,7 +48,7 @@ public class ValueIteration {
 
         //array of the adjacent states.
         State[] adjState = new State[4];
-        double tempUtility;
+        double tempUtility = gridWorldContainer.getState(col, row).getReward();
         double utilFrontAction;
         double utilLeftAction;
         double utilRightAction;
@@ -72,24 +70,24 @@ public class ValueIteration {
                 adjState[i] = gridWorldContainer.getState(col + adj[i][0], row + adj[i][1]);
             } catch(IndexOutOfBoundsException error){ //if out of bounds, treat as a wall
                 adjState[i] = new State(0.00);
-                adjState[i].setWall(true);
+                adjState[i].setType(0);
             }
         }
 
         //create array of possible utilities from taking each action
         for (int i=0;i<4;i++){
 
-            if(adjState[(i)%4].isWall()) utilFrontAction = gridWorldContainer.getState(col , row ).getReward();
+            if(adjState[(i)%4].getType()==0) utilFrontAction = gridWorldContainer.getState(col , row ).getReward();
             else utilFrontAction = adjState[i%4].getReward();
 
-            if(adjState[(3+i)%4].isWall())utilLeftAction = gridWorldContainer.getState(col , row ).getReward();
+            if(adjState[(3+i)%4].getType()==0)utilLeftAction = gridWorldContainer.getState(col , row ).getReward();
             else utilLeftAction = adjState[(3+i)%4].getReward();
 
-            if(adjState[(1+i)%4].isWall())utilRightAction = gridWorldContainer.getState(col , row ).getReward();
+            if(adjState[(1+i)%4].getType()==0)utilRightAction = gridWorldContainer.getState(col , row ).getReward();
             else utilRightAction = adjState[(1+i)%4].getReward();
 
-            tempUtility = 0.8*+utilFrontAction + 0.1*utilLeftAction + 0.1*utilRightAction;
-            if (tempUtility>maxUtility) maxUtility = tempUtility;
+            tempUtility += 0.8*+utilFrontAction + 0.1*utilLeftAction + 0.1*utilRightAction;
+            maxUtility = Math.max(tempUtility, maxUtility);
         }
         return maxUtility;
     }

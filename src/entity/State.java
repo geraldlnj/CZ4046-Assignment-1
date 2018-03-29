@@ -2,8 +2,8 @@ package entity;
 
 public class State {
 	private double stateReward ;
-	private boolean stateIsWall = false;
-	private String stateAction = null;
+	private int type;
+	private String stateAction;
 	
 	public State(double reward) {
 		stateReward = reward;
@@ -17,12 +17,16 @@ public class State {
 		stateReward = reward;
 	}
 	
-	public boolean isWall() {
-		return stateIsWall;
+	public int getType() {
+	    return type;
 	}
 	
-	public void setWall(boolean wall) {
-		stateIsWall = wall;
+	public void setType(int type) {
+        //0=wall
+        //1=white
+        //3=green
+        //4=orange
+	    this.type = type;
 	}
 
 	public String getAction() {
