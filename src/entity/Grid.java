@@ -4,13 +4,21 @@ import data.Info;
 import entity.State;
 
 public class Grid {
-	private State[][] gridWorld = null;
+	private State[][] gridWorld;
 	
 	public Grid() {
 		gridWorld = new State[Info.numCols][Info.numRows];
 		constructGrid();
 	}
-	
+
+	public State getState(int col, int row){
+	    return gridWorld[col][row];
+    }
+
+    public void setState(State newState, int col, int row){
+	    gridWorld[col][row] = newState;
+    }
+
 	public void constructGrid() {
 		for (int row=0;row<Info.numRows;row++) {
 			for (int col=0;col<Info.numCols;col++) {
@@ -29,7 +37,7 @@ public class Grid {
 	
 	public void displayGrid() {
 		
-		State temp = null;
+		State temp;
 		
 		StringBuilder display = new StringBuilder();
 		

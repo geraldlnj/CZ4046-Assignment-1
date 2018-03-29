@@ -33,5 +33,7 @@ public class Info {
 	public static final double epsilon = c*rMax;
 		
 	public static final int k = 10;
+
+	public static final double gammma = epsilon * (1 - discount)/discount;
 			
 }
