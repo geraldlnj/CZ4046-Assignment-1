@@ -19,9 +19,9 @@ public class ValueIteration {
 
     //this method modifies the Grid object passed in from MainApp
     private void utilityUpdater(){
-        double tempUtility;
+        double newUtility;
         double delta;
-        double oriUtility;
+        double oldUtility;
         //State tempState;
 
         do { //while pass condition has not been met
@@ -29,13 +29,13 @@ public class ValueIteration {
             for (int row = 0; row < Info.numRows; row++) {
                 for (int col = 0; col < Info.numCols; col++) {
                     if(!(gridWorldContainer.getState(col, row).getType()==0)) { //if not wall
-                        oriUtility = gridWorldContainer.getState(col, row).getReward();
-                        tempUtility = oriUtility+ Info.discount*newUtilityCalculator(col, row); //update utility from adjacent utilities
+                        oldUtility = gridWorldContainer.getState(col, row).getUtility();
+                        newUtility = gridWorldContainer.getState(col, row).getReward()+ Info.discount*newUtilityCalculator(col, row); //update utility from adjacent states
                         //to find max delta of this sweep
-                        if (abs(oriUtility - tempUtility) > delta) delta = abs(oriUtility - tempUtility);
-                        System.out.printf("(%d, %d): \ntype: %d\nchange: %f\n", col, row, gridWorldContainer.getState(col, row).getType(), abs(oriUtility - tempUtility));
-                        System.out.printf("utility: %f\n\n", tempUtility);
-                        gridWorldContainer.getState(col, row).setReward(tempUtility); //apply new utility to state
+                        if (abs(oldUtility - newUtility) > delta) delta = abs(oldUtility - newUtility);
+                        System.out.printf("(%d, %d): \ntype: %d\nchange: %f\n", col, row, gridWorldContainer.getState(col, row).getType(), abs(oldUtility - newUtility));
+                        System.out.printf("utility: %f\n\n", newUtility);
+                        gridWorldContainer.getState(col, row).setUtility(newUtility); //apply new utility to state
                     }
                 }
             }
