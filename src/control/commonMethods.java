@@ -21,16 +21,16 @@ public class commonMethods {
     }
 
     public static double[] adjStateUtilities(Grid gridWorldContainer,  State[] adjState, int col, int row){
-        double tempUtility = gridWorldContainer.getState(col, row).getReward();
+        double tempUtility = gridWorldContainer.getState(col, row).getUtility();
         double utilFrontAction;
         double utilLeftAction;
         double utilRightAction;
         double[] utilities = new double[4];
 
         for (int i=0;i<4;i++){
-            utilFrontAction = (adjState[(i)%4].getType()==0)? tempUtility : adjState[i%4].getReward();
-            utilLeftAction = (adjState[(3+i)%4].getType()==0)? tempUtility : adjState[(3+i)%4].getReward();
-            utilRightAction = (adjState[(1+i)%4].getType()==0)? tempUtility : adjState[(1+i)%4].getReward();
+            utilFrontAction = (adjState[(i)%4].getType()==0)? tempUtility : adjState[i%4].getUtility();
+            utilLeftAction = (adjState[(3+i)%4].getType()==0)? tempUtility : adjState[(3+i)%4].getUtility();
+            utilRightAction = (adjState[(1+i)%4].getType()==0)? tempUtility : adjState[(1+i)%4].getUtility();
 
             utilities[i] = 0.8*+utilFrontAction + 0.1*utilLeftAction + 0.1*utilRightAction;
         }
