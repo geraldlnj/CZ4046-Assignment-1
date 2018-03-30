@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d8abfee6-1364-44be-b135-3b93aa76386f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/control/ValueIteration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/ValueIteration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/entity/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/entity/State.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/ValueIteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/ValueIteration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/State.java" afterDir="false" />
     </list>
@@ -19,8 +21,8 @@
       <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="528">
+              <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,14 +30,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ValueIteration.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
+      <file leaf-file-name="commonMethods.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/control/commonMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+            <state relative-caret-position="33">
+              <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#ValueIteration#0;class#ValueIteration#0" />
+                <element signature="method#adjStates#0;class#commonMethods#0" />
+                <element signature="method#adjStateUtilities#0;class#commonMethods#0" />
+                <element signature="method#setoptimalPolicy#0;class#commonMethods#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValueIteration.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#utilityUpdater#0;class#ValueIteration#0" />
+                <element signature="method#newUtilityCalculator#0;class#ValueIteration#0" />
+                <element signature="method#utilityPrinter#0;class#ValueIteration#0" />
               </folding>
             </state>
           </provider>
@@ -44,8 +63,8 @@
       <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+            <state relative-caret-position="132">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
               <folding>
                 <element signature="e#358#359#0" expanded="true" />
                 <element signature="e#369#370#0" expanded="true" />
@@ -56,15 +75,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Info.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/Info.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="770">
+              <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+            <state relative-caret-position="44">
+              <caret line="49" column="57" lean-forward="true" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#242#243#0" expanded="true" />
                 <element signature="e#281#282#0" expanded="true" />
+                <element signature="method#constructGrid#0;class#Grid#0" />
               </folding>
             </state>
           </provider>
@@ -86,16 +115,17 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/data/Info.java" />
-        <option value="$PROJECT_DIR$/src/entity/Grid.java" />
         <option value="$PROJECT_DIR$/src/main/MainApp.java" />
+        <option value="$PROJECT_DIR$/src/entity/Grid.java" />
         <option value="$PROJECT_DIR$/src/entity/State.java" />
         <option value="$PROJECT_DIR$/src/control/ValueIteration.java" />
+        <option value="$PROJECT_DIR$/src/control/commonMethods.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="591" />
-    <option name="y" value="-20" />
+    <option name="x" value="135" />
+    <option name="y" value="5" />
     <option name="width" value="1255" />
     <option name="height" value="1090" />
   </component>
@@ -261,7 +291,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -269,9 +298,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.37825522" side_tool="true" visible="true" weight="0.3281046" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.37955728" side_tool="true" visible="true" weight="0.40522876" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6217448" visible="true" weight="0.3281046" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6204427" visible="true" weight="0.40522876" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
@@ -301,7 +330,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -336,6 +365,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
+            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -346,7 +376,9 @@
           <caret line="35" column="67" lean-forward="true" selection-start-line="35" selection-start-column="67" selection-end-line="35" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ValueIteration#0;class#ValueIteration#0" />
+            <element signature="method#utilityUpdater#0;class#ValueIteration#0" />
+            <element signature="method#newUtilityCalculator#0;class#ValueIteration#0" />
+            <element signature="method#utilityPrinter#0;class#ValueIteration#0" />
           </folding>
         </state>
       </provider>
@@ -369,6 +401,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
+            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -399,7 +432,9 @@
           <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ValueIteration#0;class#ValueIteration#0" />
+            <element signature="method#utilityUpdater#0;class#ValueIteration#0" />
+            <element signature="method#newUtilityCalculator#0;class#ValueIteration#0" />
+            <element signature="method#utilityPrinter#0;class#ValueIteration#0" />
           </folding>
         </state>
       </provider>
@@ -442,6 +477,7 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
+            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -452,7 +488,9 @@
           <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ValueIteration#0;class#ValueIteration#0" />
+            <element signature="method#utilityUpdater#0;class#ValueIteration#0" />
+            <element signature="method#newUtilityCalculator#0;class#ValueIteration#0" />
+            <element signature="method#utilityPrinter#0;class#ValueIteration#0" />
           </folding>
         </state>
       </provider>
@@ -580,17 +618,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/Info.java">
+    <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+        <state relative-caret-position="528">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="132">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
           <folding>
             <element signature="e#358#359#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
@@ -600,35 +641,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/Info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="36" column="74" selection-start-line="36" selection-start-column="74" selection-end-line="36" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
+        <state relative-caret-position="44">
+          <caret line="49" column="57" lean-forward="true" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="38" column="21" lean-forward="true" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        <state relative-caret-position="113">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#ValueIteration#0;class#ValueIteration#0" />
+            <element signature="method#utilityUpdater#0;class#ValueIteration#0" />
+            <element signature="method#newUtilityCalculator#0;class#ValueIteration#0" />
+            <element signature="method#utilityPrinter#0;class#ValueIteration#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/commonMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#adjStates#0;class#commonMethods#0" />
+            <element signature="method#adjStateUtilities#0;class#commonMethods#0" />
+            <element signature="method#setoptimalPolicy#0;class#commonMethods#0" />
           </folding>
         </state>
       </provider>

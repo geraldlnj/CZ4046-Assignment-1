@@ -2,6 +2,7 @@ package control;
 import data.Info;
 import entity.Grid;
 import entity.State;
+import control.*;
 
 
 
@@ -15,6 +16,8 @@ public class ValueIteration {
         this.gridWorldContainer = gridWorldContainer;
         utilityUpdater();
         utilityPrinter();
+        commonMethods.setOptimalPolicy(gridWorldContainer);
+        commonMethods.printOptimalPolicy(gridWorldContainer);
     }
 
     //this method modifies the Grid object passed in from MainApp
@@ -22,85 +25,66 @@ public class ValueIteration {
         double newUtility;
         double delta;
         double oldUtility;
-        //State tempState;
+        //State tempState
+        double[][] utilityCopy = new double[Info.numCols][Info.numRows];
+
+        for (int row = 0; row < Info.numRows; row++) {
+            for (int col = 0; col < Info.numCols; col++) {
+                utilityCopy[col][row] = gridWorldContainer.getState(col, row).getUtility();
+            }
+        }
 
         do { //while pass condition has not been met
             delta = 0; //reset delta (change in state utility)
             for (int row = 0; row < Info.numRows; row++) {
                 for (int col = 0; col < Info.numCols; col++) {
+                    gridWorldContainer.getState(col, row).setUtility(utilityCopy[col][row]); //apply new utility to state
+                }
+            }
+            for (int row = 0; row < Info.numRows; row++) {
+                for (int col = 0; col < Info.numCols; col++) {
                     if(!(gridWorldContainer.getState(col, row).getType()==0)) { //if not wall
                         oldUtility = gridWorldContainer.getState(col, row).getUtility();
-                        newUtility = gridWorldContainer.getState(col, row).getReward()+ Info.discount*newUtilityCalculator(col, row); //update utility from adjacent states
+                        newUtility = gridWorldContainer.getState(col, row).getReward()+ Info.discount*newUtilityCalculator(gridWorldContainer, col, row); //update utility from adjacent states
+
                         //to find max delta of this sweep
                         if (abs(oldUtility - newUtility) > delta) delta = abs(oldUtility - newUtility);
+                        utilityCopy[col][row] = newUtility; //apply to utilityCopy array
                         System.out.printf("(%d, %d): \ntype: %d\nchange: %f\n", col, row, gridWorldContainer.getState(col, row).getType(), abs(oldUtility - newUtility));
                         System.out.printf("utility: %f\n\n", newUtility);
-                        gridWorldContainer.getState(col, row).setUtility(newUtility); //apply new utility to state
                     }
                 }
             }
+
         } while (delta>Info.gammma);
     }
 
     //helper method for utilityUpdater for updating each state's utility
-    private double newUtilityCalculator(int col, int row){
-        double maxUtility = Double.NEGATIVE_INFINITY; //double to find max of utility from all actions
-
+    private double newUtilityCalculator(Grid gridWorldContainer, int col, int row){
         //array of the adjacent states.
-        State[] adjState = new State[4];
-        double tempUtility = gridWorldContainer.getState(col, row).getReward();
-        double utilFrontAction;
-        double utilLeftAction;
-        double utilRightAction;
+        double maxUtility;
+        State[] adjState;
+        double[] adjUtility;
 
-        /*
-        indexes:
-        0: up
-        1: right
-        2: down
-        3: left
-        */
-
-        int adj[][] = {{0,-1}, {1, 0},{0, 1}, {-1, 0}};
-
-
-        //create array of states adjacent to current
-        for (int i=0;i<4;i++){
-            try {
-                adjState[i] = gridWorldContainer.getState(col + adj[i][0], row + adj[i][1]);
-            } catch(IndexOutOfBoundsException error){ //if out of bounds, treat as a wall
-                adjState[i] = new State(0.00);
-                adjState[i].setType(0);
-            }
-        }
-
-        //create array of possible utilities from taking each action
-        for (int i=0;i<4;i++){
-
-            if(adjState[(i)%4].getType()==0) utilFrontAction = gridWorldContainer.getState(col , row ).getReward();
-            else utilFrontAction = adjState[i%4].getReward();
-
-            if(adjState[(3+i)%4].getType()==0)utilLeftAction = gridWorldContainer.getState(col , row ).getReward();
-            else utilLeftAction = adjState[(3+i)%4].getReward();
-
-            if(adjState[(1+i)%4].getType()==0)utilRightAction = gridWorldContainer.getState(col , row ).getReward();
-            else utilRightAction = adjState[(1+i)%4].getReward();
-
-            tempUtility += 0.8*+utilFrontAction + 0.1*utilLeftAction + 0.1*utilRightAction;
-            maxUtility = Math.max(tempUtility, maxUtility);
-        }
+        //get array of achievable states
+        adjState = commonMethods.adjStates(gridWorldContainer, col, row);
+        adjUtility = commonMethods.adjStateUtilities(gridWorldContainer, adjState, col, row);
+        maxUtility = adjUtility[0];
+        for (int i = 1; i<4; i++) maxUtility = max(maxUtility, adjUtility[i]);
         return maxUtility;
-    }
+}
 
     private void utilityPrinter(){
         double tempUtility;
         System.out.println("Coordinates are in (col,row) format with the top left corner being(0,0).");
         for(int col=0;col<Info.numCols;col++){
             for (int row=0;row<Info.numRows;row++){
-                tempUtility = gridWorldContainer.getState(col, row).getReward();
+                tempUtility = gridWorldContainer.getState(col, row).getUtility();
                 System.out.printf("(%d, %d): %f\n", col, row, tempUtility);
 
             }
         }
     }
+
+
 }

@@ -4,7 +4,7 @@ public class State {
 	private double stateReward ;
 	private double stateUtility = 0.00;
 	private int type;
-	private String stateAction;
+	private char stateAction = '*';
 	
 	public State(double reward) {
 		stateReward = reward;
@@ -35,10 +35,10 @@ public class State {
 	    this.type = type;
 	}
 
-	public String getAction() {
+	public char getAction() {
 		return stateAction;
 	}
-    public void setAction(String action){
+    public void setAction(char action){
 	    stateAction = action;
     }
 }
