@@ -2,6 +2,8 @@ package control;
 import data.Info;
 import entity.*;
 
+import static java.lang.Math.max;
+
 public class commonMethods {
 
     //returns array of states achievable
@@ -99,5 +101,40 @@ public class commonMethods {
             display.append("\n");
         }
         System.out.println(display.toString());
+    }
+
+    public static void utilityPrinter(Grid gridWorldContainer){
+        double tempUtility;
+        System.out.println("Coordinates are in (col,row) format with the top left corner being(0,0).");
+        for(int col=0;col<Info.numCols;col++){
+            for (int row=0;row<Info.numRows;row++){
+                tempUtility = gridWorldContainer.getState(col, row).getUtility();
+                System.out.printf("(%d, %d): %f\n", col, row, tempUtility);
+
+            }
+        }
+    }
+    //helper method for utilityUpdater for getting max utility achievable from any action
+    public static double[] maxUtilityCalculator(Grid gridWorldContainer, int col, int row){
+        double[] maxUtilityAchievable = new double[2];
+        //maxUtilityAchievable[0] gives the max utility achievable
+        //maxUtilityAchievable[1] gives the action to get this max utility. quite cumbersome, but it works.
+
+        State[] adjState; //array of the adjacent states.
+        double[] adjUtility;
+
+        //get array of achievable states
+        adjState = commonMethods.adjStates(gridWorldContainer, col, row);
+        adjUtility = commonMethods.adjStateUtilities(gridWorldContainer, adjState, col, row);
+
+        maxUtilityAchievable[0] = adjUtility[0];
+        maxUtilityAchievable[1] = (double)0;
+        for (int i = 1; i<4; i++) {
+            if (adjUtility[i]>maxUtilityAchievable[0]){
+                maxUtilityAchievable[0] = adjUtility[i];
+                maxUtilityAchievable[1] = (double)i;
+            }
+        }
+        return maxUtilityAchievable;
     }
 }

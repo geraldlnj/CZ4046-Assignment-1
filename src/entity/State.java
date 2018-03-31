@@ -4,7 +4,7 @@ public class State {
 	private double stateReward ;
 	private double stateUtility = 0.00;
 	private int type;
-	private char stateAction = '*';
+	private char stateAction = '^';
 	
 	public State(double reward) {
 		stateReward = reward;

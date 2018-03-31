@@ -28,7 +28,7 @@ public class MainApp {
                 control.ValueIteration valueIterator = new control.ValueIteration(gridWorldContainer);
                 break;
             case 2:
-                //policyiteration(gridWorldContainer)
+                control.PolicyIteration policyIterator = new control.PolicyIteration(gridWorldContainer);
                 break;
             default:
                 System.out.println("Error. Run again.");
