@@ -46,7 +46,7 @@ public class commonMethods {
                 State[] adjState;
                 double[] adjUtility;
                 int index = 0;
-                char action;
+                int action;
 
                 adjState = adjStates(gridWorldContainer, col, row);
                 adjUtility = commonMethods.adjStateUtilities(gridWorldContainer, adjState, col, row);
@@ -54,24 +54,7 @@ public class commonMethods {
                     if (adjUtility[i] > adjUtility[index]) index = i;
                 }
 
-                switch (index){
-                    case 0:
-                        action = '^';
-                        break;
-                    case 1:
-                        action = '>';
-                        break;
-                    case 2:
-                        action = 'v';
-                        break;
-                    case 3:
-                        action = '<';
-                        break;
-                    default:
-                        //shouldnt happen.
-                        action = '?';
-                        break;
-                }
+                action = index;
 
                 gridWorldContainer.getState(col, row).setAction(action);
 
@@ -85,19 +68,35 @@ public class commonMethods {
         StringBuilder display = new StringBuilder();
 
         display.append("|");
-        for (int col = 0; col < Info.numCols; col++) display.append("----|");
+        for (int col = 0; col < Info.numCols; col++) display.append("---|");
         display.append("\n");
 
         for (int row = 0; row < Info.numRows; row++) {
             display.append("|");
             for (int col = 0; col < Info.numCols; col++) {
                 temp = gridWorldContainer.getState(col, row);
-                if (temp.getType()==0) display.append(String.format(" %-2s |", "WW"));
-                else display.append(String.format(" %s  |", temp.getAction()));
+                if (temp.getType()==0) display.append(String.format(" %-1s |", "W"));
+                else switch(temp.getAction()){
+                    case 0:
+                        display.append(" ^ |" );
+                        break;
+                    case 1:
+                        display.append(" > |" );
+                        break;
+                    case 2:
+                        display.append(" v |" );
+                        break;
+                    case 3:
+                        display.append(" < |" );
+                        break;
+                    default:
+                        display.append(" ?  |" );
+                        break;
+                }
             }
             display.append("\n");
             display.append("|");
-            for (int col = 0; col < Info.numCols; col++) display.append("----|");
+            for (int col = 0; col < Info.numCols; col++) display.append("---|");
             display.append("\n");
         }
         System.out.println(display.toString());

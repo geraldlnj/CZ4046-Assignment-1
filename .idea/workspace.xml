@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d8abfee6-1364-44be-b135-3b93aa76386f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/control/ValueIteration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/ValueIteration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/control/PolicyIteration.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/PolicyIteration.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/control/commonMethods.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/control/commonMethods.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/data/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/data/Info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/main/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/MainApp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/control/ValueIteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/ValueIteration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/entity/State.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/entity/State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control/PolicyIteration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/PolicyIteration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/control/commonMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control/commonMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainApp.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +23,8 @@
       <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="30" column="105" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
+            <state relative-caret-position="123">
+              <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,11 +35,10 @@
       <file leaf-file-name="commonMethods.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/control/commonMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+            <state relative-caret-position="301">
+              <caret line="98" column="75" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#printOptimalPolicy#0;class#commonMethods#0" />
               </folding>
             </state>
           </provider>
@@ -51,8 +47,8 @@
       <file leaf-file-name="ValueIteration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="75" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="75" />
+            <state relative-caret-position="1298">
+              <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +59,8 @@
       <file leaf-file-name="PolicyIteration.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/control/PolicyIteration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+            <state relative-caret-position="98">
+              <caret line="51" column="58" lean-forward="true" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,8 +71,8 @@
       <file leaf-file-name="State.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="-27">
+              <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -84,8 +80,8 @@
       <file leaf-file-name="Info.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/data/Info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+            <state relative-caret-position="462">
+              <caret line="22" column="42" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -93,13 +89,12 @@
       <file leaf-file-name="Grid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/entity/Grid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+            <state>
+              <caret column="3" selection-start-column="3" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#242#243#0" expanded="true" />
                 <element signature="e#281#282#0" expanded="true" />
-                <element signature="method#constructGrid#0;class#Grid#0" />
               </folding>
             </state>
           </provider>
@@ -114,6 +109,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>newAction</find>
+      <find>action</find>
+      <find>Action</find>
+      <find>'</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -121,18 +124,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/entity/Grid.java" />
-        <option value="$PROJECT_DIR$/src/main/MainApp.java" />
-        <option value="$PROJECT_DIR$/src/entity/State.java" />
         <option value="$PROJECT_DIR$/src/control/ValueIteration.java" />
-        <option value="$PROJECT_DIR$/src/control/commonMethods.java" />
         <option value="$PROJECT_DIR$/src/data/Info.java" />
+        <option value="$PROJECT_DIR$/src/entity/State.java" />
+        <option value="$PROJECT_DIR$/src/control/POLICY2.java" />
+        <option value="$PROJECT_DIR$/src/main/MainApp.java" />
+        <option value="$PROJECT_DIR$/src/control/commonMethods.java" />
         <option value="$PROJECT_DIR$/src/control/PolicyIteration.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="607" />
-    <option name="y" value="-24" />
+    <option name="x" value="605" />
+    <option name="y" value="-25" />
     <option name="width" value="1255" />
     <option name="height" value="1090" />
   </component>
@@ -141,7 +145,33 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CZ4046 Assignment 1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CZ4046 Assignment 1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CZ4046 Assignment 1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CZ4046 Assignment 1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CZ4046 Assignment 1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CZ4046 Assignment 1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="control" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -260,11 +290,11 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.38020834" side_tool="true" weight="0.40522876" />
       <window_info anchor="right" id="Maven Projects" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6197917" visible="true" weight="0.10980392" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6197917" weight="0.29542485" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.17578125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17578125" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -297,23 +327,10 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="5" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/entity/Grid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="704">
@@ -340,7 +357,6 @@
           <caret line="36" column="24" selection-start-line="36" selection-start-column="15" selection-end-line="36" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printOptimalPolicy#0;class#commonMethods#0" />
           </folding>
         </state>
       </provider>
@@ -377,7 +393,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -434,7 +449,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -445,7 +459,6 @@
           <caret line="23" column="79" selection-start-line="23" selection-start-column="79" selection-end-line="23" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printOptimalPolicy#0;class#commonMethods#0" />
           </folding>
         </state>
       </provider>
@@ -475,7 +488,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -508,7 +520,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -569,7 +580,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
           </folding>
         </state>
       </provider>
@@ -691,56 +701,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Grid.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="49" column="57" selection-start-line="49" selection-start-column="57" selection-end-line="49" selection-end-column="57" />
+        <state>
+          <caret column="3" selection-start-column="3" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#242#243#0" expanded="true" />
             <element signature="e#281#282#0" expanded="true" />
-            <element signature="method#constructGrid#0;class#Grid#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="30" column="105" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/control/commonMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#printOptimalPolicy#0;class#commonMethods#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/data/Info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        <state relative-caret-position="462">
+          <caret line="22" column="42" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/POLICY2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="69" lean-forward="true" selection-end-line="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="30" column="16" lean-forward="true" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/control/commonMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="98" column="75" selection-start-line="98" selection-start-column="75" selection-end-line="98" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/ValueIteration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="75" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="75" />
+        <state relative-caret-position="1298">
+          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -749,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/control/PolicyIteration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        <state relative-caret-position="98">
+          <caret line="51" column="58" lean-forward="true" selection-start-line="51" selection-start-column="58" selection-end-line="51" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
