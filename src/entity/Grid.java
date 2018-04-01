@@ -15,10 +15,6 @@ public class Grid {
 	    return gridWorld[col][row];
     }
 
-    public void setState(State newState, int col, int row){
-	    gridWorld[col][row] = newState;
-    }
-
 	public void constructGrid() {
 		for (int row=0;row<Info.numRows;row++) {
 			for (int col=0;col<Info.numCols;col++) {
@@ -65,5 +61,4 @@ public class Grid {
 		}
 		System.out.println(display.toString());
 	}
-
 }

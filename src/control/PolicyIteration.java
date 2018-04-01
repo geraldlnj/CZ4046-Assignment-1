@@ -2,7 +2,11 @@ package control;
 import data.Info;
 import entity.Grid;
 import entity.State;
-import control.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 import static java.lang.Math.*;
 
 public class PolicyIteration {
@@ -12,7 +16,8 @@ public class PolicyIteration {
     public PolicyIteration(Grid gridWorldContainer){
         this.gridWorldContainer = gridWorldContainer;
         policyUpdater();
-        commonMethods.printOptimalPolicy(gridWorldContainer);
+        CommonMethods.utilityPrinter(gridWorldContainer);
+        CommonMethods.printOptimalPolicy(gridWorldContainer);
         System.out.printf("Iterations: %d\n",iterations);
     }
 
@@ -28,39 +33,60 @@ public class PolicyIteration {
         State[] adjStates;
         double[] adjStateUtilities;
 
+        PrintWriter pw = null;
+
+        try {
+            pw = new PrintWriter(new File("NewData.csv"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        StringBuilder builder = new StringBuilder();
+        String ColumnNamesList = "iteration, (col, row), utility\n";
+        builder.append(ColumnNamesList + "\n");
+
 
 
 
 
         do { //while pass condition has not been met
+            for (int row = 0; row < Info.numRows; row++) {
+                for (int col = 0; col < Info.numCols; col++) {
+                    builder.append(String.format("%d, %d|%d, %f\n", iterations, col, row, gridWorldContainer.getState(col, row).getUtility()));
+                }
+            }
             iterations++;
             unchanged = true; //reset delta (change in state utility)
 
-
-            //policy evaluation
-            for (int row = 0; row < Info.numRows; row++) {
-                for (int col = 0; col < Info.numCols; col++) {
-                    adjStates = commonMethods.adjStates(gridWorldContainer, col, row);
-                    adjStateUtilities = commonMethods.adjStateUtilities(gridWorldContainer, adjStates, col, row);
-                    newUtility = gridWorldContainer.getState(col, row).getReward()+Info.discount*adjStateUtilities[gridWorldContainer.getState(col, row).getAction()];
-                    gridWorldContainer.getState(col, row).setUtility(newUtility);
+            for (int i = 0;i<Info.k; i++) {
+                //policy evaluation
+                for (int row = 0; row < Info.numRows; row++) {
+                    for (int col = 0; col < Info.numCols; col++) {
+                        adjStates = CommonMethods.adjStates(gridWorldContainer, col, row);
+                        adjStateUtilities = CommonMethods.adjStateUtilities(gridWorldContainer, adjStates, col, row);
+                        newUtility = gridWorldContainer.getState(col, row).getReward() + Info.discount * adjStateUtilities[gridWorldContainer.getState(col, row).getAction()];
+                        gridWorldContainer.getState(col, row).setUtility(newUtility);
+                    }
                 }
             }
 
 
 
+
             for (int row = 0; row < Info.numRows; row++) {
                 for (int col = 0; col < Info.numCols; col++) {
+                    if(gridWorldContainer.getState(col, row).getType()==0) continue;//skip if wall
+
                     curAction = gridWorldContainer.getState(col, row).getAction();
 
-                    if(gridWorldContainer.getState(col, row).getType()==0) continue;        //skip if wall
-                    adjStates = commonMethods.adjStates(gridWorldContainer, col, row);
-                    adjStateUtilities = commonMethods.adjStateUtilities(gridWorldContainer, adjStates, col, row);
-
+                    adjStates = CommonMethods.adjStates(gridWorldContainer, col, row);
+                    adjStateUtilities = CommonMethods.adjStateUtilities(gridWorldContainer, adjStates, col, row);
                     curUtility = gridWorldContainer.getState(col, row).getReward()+ Info.discount*adjStateUtilities[curAction];
-                    maxUtilityAchievable = gridWorldContainer.getState(col, row).getReward()+ Info.discount*commonMethods.maxUtilityCalculator(gridWorldContainer, col, row)[0]; //update utility from adjacent states
+
+                    maxUtilityAchievable = gridWorldContainer.getState(col, row).getReward()+ Info.discount*CommonMethods.maxUtilityCalculator(gridWorldContainer, col, row)[0]; //update utility from adjacent states
                     if (maxUtilityAchievable>curUtility) {
-                        newAction = (int)commonMethods.maxUtilityCalculator(gridWorldContainer, col, row)[1];
+                        System.out.printf("curUtility: %f\n", curUtility);
+                        System.out.printf("maxUtility: %f\n", maxUtilityAchievable);
+                        newAction = (int)CommonMethods.maxUtilityCalculator(gridWorldContainer, col, row)[1];
                         gridWorldContainer.getState(col, row).setAction(newAction);
                     }
 
@@ -76,6 +102,8 @@ public class PolicyIteration {
                 }
             }
         } while (!unchanged);
+        pw.write(builder.toString());
+        pw.close();
     }
 
 

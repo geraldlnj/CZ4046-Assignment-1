@@ -6,17 +6,17 @@ import java.util.Arrays;
 
 public class Info {
 	
-	public static final int numCols = 6;
-	public static final int numRows = 6;
+	public static final int numCols = 8;
+	public static final int numRows = 8;
 	
 	public static final double whiteReward = -0.04;
 	public static final double greenReward = 1.00;
 	public static final double orangeReward = -1.00;
 	public static final double wallReward = 0.00;
 	
-	public static final int[][] walls = {{1,0},{4,1},{1,4},{2,4},{3,4}};
-	public static final int[][] greenStates = {{0,0,},{2,0},{5,0},{3,1},{4,2},{5,3}};
-	public static final int[][] orangeStates = {{1,1},{2,2},{3,3},{4,4},{5,1}};	
+	public static final int[][] walls = {};
+	public static final int[][] greenStates = {{0,0,},{2,0},{5,0}};
+	public static final int[][] orangeStates = {};
 	
 	public static final double actionProb = 0.80;
 	public static final double leftActionProb = 0.10;
